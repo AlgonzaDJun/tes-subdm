@@ -10,25 +10,11 @@ export function middleware(req: NextRequest) {
   // Route requests based on subdomains
   if (subdomain === "sushi") {
     // return NextResponse.rewrite(new URL("/sushi", req.url));
-    const { pathname } = req.nextUrl;
-    const slug = pathname.split("/").filter(Boolean);
-
-    // Jika ada slug, misalnya: "/asdf"
-    if (slug.length > 0) {
-
-      // Lakukan sesuatu jika ada slug
-      // Contoh: redirect ke halaman tertentu
-      return NextResponse.rewrite(new URL(`/sushi/${slug.join("/")}`, req.url));
-    }
-
-    const response = NextResponse.next();
-    response.headers.set("isSushi", "true");
-    // check if has slug
+    // const response = NextResponse.next();
+    // response.headers.set("isSushi", "true");
     // return response;
-    // window.alert("redirecting to sushi page");
-    // url.pathname = `/sushi${url.pathname}`;
-    // return NextResponse.rewrite(url);
-    return response;
+    url.pathname = `/sushi${url.pathname}`;
+    return NextResponse.rewrite(url);
   }
 
   //   if (subdomain === "app") {
