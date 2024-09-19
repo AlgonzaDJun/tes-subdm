@@ -8,10 +8,10 @@ const nextConfig = {
         has: [
           {
             type: "host",
-            value: "sushi.localhost",
+            value: "sushi.tes-subdm.vercel.app",
           },
         ],
-        destination: "http://localhost:3000/sushi/:path*",
+        destination: "http://tes-subdm.vercel.app/sushi/:path*",
         permanent: false,
       },
     ];
