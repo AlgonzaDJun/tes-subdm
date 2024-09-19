@@ -8,7 +8,7 @@ const nextConfig = {
         has: [
           {
             type: "host",
-            value: "sushi.incare.biz.id",
+            value: "www.sushi.incare.biz.id",
           },
         ],
         destination: "https://incare.biz.id/sushi/:path*",

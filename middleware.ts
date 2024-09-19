@@ -9,10 +9,11 @@ export function middleware(req: NextRequest) {
 
   // Route requests based on subdomains
   if (subdomain === "sushi") {
-    // return NextResponse.rewrite(new URL("/sushi", req.url));
-    // const response = NextResponse.next();
-    // response.headers.set("isSushi", "true");
+    return NextResponse.rewrite(new URL("/sushi", req.url));
+    const response = NextResponse.next();
+    response.headers.set("isSushi", "true");
     // return response;
+    // window.alert("redirecting to sushi page");
     url.pathname = `/sushi${url.pathname}`;
     return NextResponse.rewrite(url);
   }
