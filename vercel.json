@@ -1,15 +1,14 @@
 {
-  "redirects": [
+  "rewrites": [
     {
-      "source": "/",
-      "destination": "/sushi",
+      "source": "/(.*)",
+      "destination": "/sushi/$1",
       "has": [
         {
           "type": "host",
           "value": "sushi.incare.biz.id"
         }
-      ],
-      "permanent": false
+      ]
     }
   ]
 }
