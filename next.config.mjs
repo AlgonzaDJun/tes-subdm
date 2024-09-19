@@ -3,17 +3,17 @@ const nextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
-      {
-        source: "/:path*",
-        has: [
-          {
-            type: "host",
-            value: "sushi.incare.biz.id",
-          },
-        ],
-        destination: "https://incare.biz.id/sushi/:path*",
-        permanent: false,
-      },
+    //   {
+    //     source: "/:path*",
+    //     has: [
+    //       {
+    //         type: "host",
+    //         value: "sushi.incare.biz.id",
+    //       },
+    //     ],
+    //     destination: "https://incare.biz.id/sushi/:path*",
+    //     permanent: false,
+    //   },
     ];
   },
 };
