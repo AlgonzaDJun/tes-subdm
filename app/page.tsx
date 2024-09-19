@@ -1,14 +1,19 @@
+import { headers } from "next/headers";
 import Image from "next/image";
+import SushiPage from "./sushi/page";
+import SushiPageSlug from "./sushi/[slug]/page";
 
 export default function Home() {
   // if sushi is a subdomain, redirect to sushi page
-  if (typeof window !== "undefined") {
-    const hostname = window.location.hostname;
-    const subdomain = hostname.split(".")[0];
-    if (subdomain === "sushi") {
-      return <div>redirecting to sushi page</div>;
-    }
+
+  const header = headers().get("isSushi");
+  // if had slug, redirect to sushi page with slug
+
+  if (header) {
+    return <SushiPage />;
   }
+
+  // if isSushi header is set, redirect to sushi page
 
   return <div>this is the home page</div>;
 }
